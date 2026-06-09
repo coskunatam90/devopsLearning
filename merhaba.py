@@ -1,3 +1,3 @@
 print("Merhaba Dünya!")
-print("test5")
+print("aws oto güncelleme")
 print("GitHub Actions çalışıyor!")
