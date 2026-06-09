@@ -28,3 +28,15 @@ jobs:
           context: .
           push: true
           tags: coskunatam90/merhaba-python:latest
+
+      - name: AWS EC2'ya deploy et
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ec2-user
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            docker pull coskunatam90/merhaba-python:latest
+            docker stop merhaba-container || true
+            docker rm merhaba-container || true
+            docker run --name merhaba-container coskunatam90/merhaba-python:latest
