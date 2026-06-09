@@ -1,3 +1,3 @@
 print("Merhaba Dünya!")
-print("test2")
+print("test3")
 print("GitHub Actions çalışıyor!")
